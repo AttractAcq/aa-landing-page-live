@@ -1,24 +1,699 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#10271f"><title>AA Console — The Autonomous Acquisition Engine</title><meta name="description" content="Launch customer-acquisition infrastructure in a day. Keep content production running every day. One connected operating system for demand.">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
-:root{--deep:#10271f;--deep2:#19382a;--lime:#dcfa79;--cream:#f5f4ea;--muted:#607066;--line:#d9dfd4;--white:#fff;--ink:#16251d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'DM Sans',Arial,sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased}button,a{font:inherit}a{text-decoration:none;color:inherit}button{cursor:pointer}.wrap{max-width:1240px;margin:0 auto;padding:0 34px}.nav{height:78px;background:var(--deep);border-bottom:1px solid #ffffff19;color:white}.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%}.brand{display:flex;align-items:center;gap:10px;font-family:Manrope,sans-serif;font-weight:800;font-size:19px;letter-spacing:-.8px}.logo{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--lime);color:var(--deep);font-size:13px;letter-spacing:-1px;font-weight:800}.navlinks{display:flex;align-items:center;gap:30px;font-size:13px;color:#c6d3ca}.navlinks a:hover{color:white}.nav-btn{padding:12px 17px;border-radius:7px;background:var(--lime);color:var(--deep)!important;font-weight:700}.hero{background:var(--deep);color:#fff;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:550px;height:550px;background:radial-gradient(circle,#4e8b4b4b,transparent 65%);right:-130px;top:20px;pointer-events:none}.hero-layout{display:grid;grid-template-columns:1.04fr .96fr;gap:48px;align-items:center;min-height:675px;padding-top:70px;padding-bottom:85px;position:relative}.eyebrow{display:flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:2px;font-weight:800;font-size:11px}.eyebrow .dot{width:7px;height:7px;background:var(--lime);border-radius:50%}.hero .eyebrow{color:var(--lime)}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:Manrope,Arial,sans-serif}h1{font-size:clamp(48px,5.25vw,77px);line-height:1.09;letter-spacing:-4px;margin:28px 0 24px;font-weight:700}h1 em{font-style:normal;color:var(--lime)}.lead{max-width:555px;font-size:17px;line-height:1.8;color:#b9c9bf;margin-bottom:33px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:8px;padding:15px 21px;font-weight:800;font-size:13px;border:1px solid transparent;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--lime);color:var(--deep)}.btn-outline{border-color:#789284;color:#edf6ee;background:transparent}.small-proof{display:flex;gap:24px;flex-wrap:wrap;margin-top:45px;color:#b1c4b6;font-size:12px}.small-proof span:before{content:'✓';color:var(--lime);margin-right:8px}.console{background:#edf1e8;border-radius:13px;box-shadow:0 40px 80px #0005;overflow:hidden;transform:perspective(1200px) rotateY(-5deg) rotateX(2deg);border:1px solid #87a18c55;color:var(--ink)}.console-top{height:42px;background:#f8faf4;display:flex;align-items:center;gap:7px;padding:0 16px;border-bottom:1px solid #e1e5de}.circle{width:7px;height:7px;border-radius:50%;background:#ced6cb}.console-title{font-weight:800;font-size:10px;color:#758375;margin-left:14px;letter-spacing:.5px}.console-body{padding:23px}.mini-head{display:flex;justify-content:space-between;align-items:flex-start}.mini-head h3{font-size:18px;letter-spacing:-.8px;margin:6px 0 5px}.mini-kicker{font-size:9px;letter-spacing:1.3px;color:#6e8272;font-weight:800}.live{font-size:10px;border-radius:5px;color:#265139;background:#dbefdc;padding:6px 8px;font-weight:800}.mini-desc{font-size:10px;color:#89968a}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:23px 0}.stat{border-radius:6px;border:1px solid #dfe6dc;background:#fff;padding:11px 10px}.stat strong{display:block;font-family:Manrope,sans-serif;font-size:20px;letter-spacing:-1px}.stat span{font-size:9px;color:#7a8b80}.panel{background:white;border:1px solid #dee5dc;border-radius:8px;padding:13px;margin-top:10px}.panel-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:11px;font-weight:800}.subpill{background:#e8f4cd;border-radius:4px;color:#3c6535;padding:5px 7px;font-size:9px}.asset-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.asset{border:1px solid #e1e5de;border-radius:5px;overflow:hidden}.visual{height:96px;background-size:cover;background-position:center;position:relative}.visual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#091a1699,transparent 55%)}.v1{background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80')}.v2{background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80')}.v3{background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80')}.v4{background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80')}.visual span{position:absolute;bottom:8px;left:7px;z-index:2;color:#fff;font-size:9px;font-weight:800}.asset-foot{padding:7px;font-size:9px;display:flex;align-items:center;justify-content:space-between}.asset-foot b{color:#45804a;font-size:9px}.workflow{display:flex;gap:5px;align-items:center;margin-top:10px}.wf-step{background:#edf3e9;color:#517058;font-size:8px;font-weight:800;padding:8px 6px;border-radius:4px;flex:1;text-align:center}.wf-step.on{background:#d9f4a4;color:#38552f}.wf-arrow{color:#97a79b;font-size:10px}.strip{border-top:1px solid #e3e6d9;border-bottom:1px solid #e3e6d9;background:#ecf0e6}.strip-inner{min-height:106px;display:flex;align-items:center;justify-content:space-between;gap:20px}.strip-label{font-size:11px;color:#798a7c;text-transform:uppercase;letter-spacing:1.5px;font-weight:800}.strip strong{font-size:15px;color:#435649;font-weight:700}.section{padding:112px 0}.section-top{text-align:center;max-width:780px;margin:0 auto 50px}.section-top .eyebrow{justify-content:center;color:#5d7e52}.section h2{font-size:clamp(34px,4vw,54px);line-height:1.18;letter-spacing:-2.6px;margin:18px 0}.section-top p{line-height:1.75;color:#637267;font-size:16px}.mode-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}.mode-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:35px;min-height:420px;position:relative;overflow:hidden}.mode-card.dark{background:var(--deep);color:#fff;border-color:var(--deep)}.num{font-size:11px;letter-spacing:2px;font-weight:800;color:#77946f}.dark .num{color:var(--lime)}.mode-card h3{font-size:30px;letter-spacing:-1.3px;line-height:1.2;margin:27px 0 13px}.mode-card p{font-size:14px;line-height:1.8;color:#6b786f;max-width:425px}.mode-card.dark p{color:#b9c9be}.metric{margin:27px 0;font-family:Manrope,sans-serif;font-weight:800;font-size:55px;letter-spacing:-2.8px}.metric small{font-size:15px;letter-spacing:0;color:#7b8a7e;font-family:DM Sans,sans-serif;font-weight:500}.dark .metric small{color:#bccdbf}.pills{display:flex;gap:7px;flex-wrap:wrap}.pill{padding:9px 11px;border-radius:5px;border:1px solid #dce2d8;color:#516b54;font-size:11px;font-weight:700}.dark .pill{border-color:#426347;color:#c5ddc2}.dark-section{background:#143024;color:white}.dark-section .section-top p{color:#b8cbbd}.dark-section .eyebrow{color:var(--lime)}.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:55px}.step{background:#ffffff0b;border:1px solid #ffffff1a;border-radius:10px;padding:20px 15px;min-height:198px}.step i{font-size:21px;font-style:normal;color:var(--lime)}.step b{display:block;margin:25px 0 8px;font-size:13px}.step p{font-size:11px;line-height:1.6;color:#a9c1b0;margin:0}.emphasis{border:1px solid #618465;background:#ffffff0b;border-radius:12px;margin-top:25px;padding:25px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px}.emphasis strong{font-size:19px}.emphasis p{font-size:13px;color:#a9c1b0;margin:8px 0 0}.tag{background:var(--lime);color:var(--deep);padding:9px 12px;border-radius:5px;font-weight:800;font-size:11px;white-space:nowrap}.tabs{display:flex;justify-content:center;gap:8px;margin:32px 0}.tab{padding:13px 18px;background:transparent;border:1px solid #cfd9ca;border-radius:7px;color:#526c56;font-weight:800;font-size:13px}.tab.active{background:var(--deep);color:white;border-color:var(--deep)}.demo{display:grid;grid-template-columns:.75fr 1.25fr;border-radius:15px;overflow:hidden;background:white;border:1px solid var(--line);min-height:360px}.demo-left{padding:40px;background:#e9eee4}.demo-left h3{font-size:29px;letter-spacing:-1.2px;margin:18px 0}.demo-left p{color:#6b7a6b;line-height:1.7;font-size:14px}.demo-right{padding:35px 40px}.line-step{display:flex;gap:17px;padding:13px 0;align-items:flex-start;border-bottom:1px solid #edf0e9}.line-step:last-child{border-bottom:0}.check{flex:0 0 25px;height:25px;display:grid;place-items:center;background:#e8f5da;border-radius:50%;font-size:12px;color:#426b39}.line-step b{font-size:14px}.line-step p{margin:5px 0 0;color:#7a897b;font-size:12px;line-height:1.5}.outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.outcome{border-top:1px solid #bfcbbd;padding-top:20px}.outcome h3{font-size:18px;letter-spacing:-.6px}.outcome p{font-size:13px;line-height:1.8;color:#67786b}.control{background:#e9efdf}.control-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.control-grid h2{font-size:clamp(36px,4vw,52px);letter-spacing:-2.5px;line-height:1.15;margin:18px 0}.control-grid p{line-height:1.8;color:#67786a}.control-list{padding:0;margin:0;list-style:none}.control-list li{border-bottom:1px solid #cbd7c6;padding:17px 0;display:flex;align-items:center;gap:13px;font-size:14px;font-weight:700}.control-list li:before{content:'✓';color:#3a743f;font-weight:900}.cta{background:var(--deep);color:white;text-align:center;padding:105px 0}.cta h2{font-size:clamp(36px,4.5vw,63px);letter-spacing:-3px;max-width:800px;margin:15px auto 25px;line-height:1.13}.cta p{max-width:590px;margin:0 auto 28px;color:#b8cbbd;line-height:1.8}.footer{background:#0d2119;color:#9fbaaa;border-top:1px solid #ffffff1a}.footer-inner{padding-top:30px;padding-bottom:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:12px}.footer .brand{color:white}.note{font-size:11px;color:#8ca297;margin-top:18px}.hide{display:none!important}
-@media(max-width:1050px){.hero-layout{grid-template-columns:1fr;gap:55px;padding-top:65px}.hero-copy{max-width:780px}.console{max-width:700px;transform:none}.steps{grid-template-columns:repeat(3,1fr)}.strip-inner{flex-wrap:wrap;padding-top:22px;padding-bottom:22px}}@media(max-width:700px){.wrap{padding:0 20px}.nav{height:67px}.navlinks a:not(.nav-btn){display:none}.nav-btn{font-size:11px;padding:10px}.hero-layout{padding-top:60px;padding-bottom:65px}h1{letter-spacing:-2.5px}.lead{font-size:15px}.stat-grid{grid-template-columns:repeat(2,1fr)}.asset-grid{grid-template-columns:repeat(2,1fr)}.visual{height:130px}.strip-inner{gap:12px}.strip strong{font-size:13px}.section{padding:72px 0}.mode-cards,.demo,.control-grid{grid-template-columns:1fr}.mode-card{min-height:auto;padding:28px}.steps{grid-template-columns:repeat(2,1fr)}.step{min-height:175px}.emphasis{align-items:flex-start;flex-direction:column}.demo-left,.demo-right{padding:27px}.outcomes{grid-template-columns:1fr}.cta{padding:70px 0}.footer-inner{flex-direction:column;align-items:flex-start}.tabs{flex-wrap:wrap}.tab{flex:1}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
-</style></head><body>
-<nav class="nav"><div class="wrap nav-inner"><a href="#top" class="brand"><span class="logo">AA</span> AA Console</a><div class="navlinks"><a href="#modes">Two operating modes</a><a href="#engine">The engine</a><a href="#how">How it works</a><a class="nav-btn" href="#vision">Explore the vision ↗</a></div></div></nav>
-<main id="top"><section class="hero"><div class="wrap hero-layout"><div class="hero-copy"><div class="eyebrow"><span class="dot"></span> CUSTOMER ACQUISITION INFRASTRUCTURE</div><h1>Build in a day.<br><em>Run every day.</em></h1><p class="lead">One autonomous system that turns business knowledge, proof and offers into launch-ready campaigns — then keeps producing the content that drives them. Strategy, creative, landing pages and sales workflows, connected.</p><div class="actions"><a href="#modes" class="btn btn-primary">Explore the two modes <span>↗</span></a><a href="#engine" class="btn btn-outline">See the engine <span>→</span></a></div><div class="small-proof"><span>Built around your business</span><span>Human-approved outcomes</span><span>Always-on production</span></div></div>
-<div class="console" role="img" aria-label="Concept preview of the AA Console daily content approvals interface"><div class="console-top"><span class="circle"></span><span class="circle"></span><span class="circle"></span><span class="console-title">AA CONSOLE / OPERATIONS</span></div><div class="console-body"><div class="mini-head"><div><span class="mini-kicker">OPERATIONS / TODAY</span><h3>Good morning. Your assets are ready.</h3><span class="mini-desc">Daily content production · Example client workspace</span></div><span class="live">● Ready for review</span></div><div class="stat-grid"><div class="stat"><strong>04</strong><span>Assets ready</span></div><div class="stat"><strong>07</strong><span>Days in pipeline</span></div><div class="stat"><strong>12</strong><span>QA passes</span></div><div class="stat"><strong>01</strong><span>Approval queue</span></div></div><div class="panel"><div class="panel-header"><span>Today's deliverables</span><span class="subpill">4 awaiting approval</span></div><div class="asset-grid"><div class="asset"><div class="visual v1"><span>REEL · 00:30</span></div><div class="asset-foot">Reel <b>✓ Ready</b></div></div><div class="asset"><div class="visual v2"><span>STORY · 00:15</span></div><div class="asset-foot">Story <b>✓ Ready</b></div></div><div class="asset"><div class="visual v3"><span>STATIC · 01</span></div><div class="asset-foot">Creative A <b>✓ Ready</b></div></div><div class="asset"><div class="visual v4"><span>STATIC · 02</span></div><div class="asset-foot">Creative B <b>✓ Ready</b></div></div></div></div><div class="panel"><div class="panel-header"><span>Autonomous production</span><span style="color:#689062;font-size:9px">NEXT: HUMAN APPROVAL</span></div><div class="workflow"><div class="wf-step on">Plan</div><span class="wf-arrow">›</span><div class="wf-step on">Generate</div><span class="wf-arrow">›</span><div class="wf-step on">Review</div><span class="wf-arrow">›</span><div class="wf-step">Approve</div></div></div></div></div></div></section>
-<div class="strip"><div class="wrap strip-inner"><span class="strip-label">One connected system</span><strong>Intelligence</strong><strong>Campaigns</strong><strong>Creative production</strong><strong>Conversion</strong><strong>Attribution</strong></div></div>
-<section class="section" id="modes"><div class="wrap"><div class="section-top"><div class="eyebrow"><span class="dot"></span> TWO MODES. ONE ENGINE.</div><h2>From first launch to the next thousand assets.</h2><p>New clients need speed to market. Established clients need consistent, effective output. AA Console is designed to do both through the same integrated infrastructure.</p></div><div class="mode-cards"><article class="mode-card"><div class="num">MODE 01 / LAUNCH</div><h3>The One-Day<br>Market Launch.</h3><p>Turn a client's knowledge, brand, proof and offers into an interconnected acquisition system — without weeks of agency handoffs.</p><div class="metric">24h <small>launch-readiness target*</small></div><div class="pills"><span class="pill">Campaign strategy</span><span class="pill">Landing pages</span><span class="pill">Sales agents</span><span class="pill">Paid + organic assets</span></div></article><article class="mode-card dark"><div class="num">MODE 02 / OPERATE</div><h3>The Always-On<br>Content Factory.</h3><p>Wake up to a finished daily queue. The system plans, produces, tests, revises and prepares assets while your team is offline.</p><div class="metric">4 <small>assets per client / day</small></div><div class="pills"><span class="pill">1 reel</span><span class="pill">1 story</span><span class="pill">2 static assets</span><span class="pill">Ready for approval</span></div></article></div><p class="note">*Target assumes required client inputs, access and approvals are available. Production readiness is not a guarantee of platform approval or live campaign performance.</p></div></section>
-<section class="section dark-section" id="engine"><div class="wrap"><div class="section-top"><div class="eyebrow"><span class="dot"></span> THE SHARED ENGINE</div><h2>Not another set of AI tools.<br>One production system.</h2><p>Specialised agents, generation services and existing workflows operate as a connected chain — with every output feeding the next stage.</p></div><div class="steps"><div class="step"><i>01</i><b>Understand</b><p>Ingest business knowledge, market context, proof and brand intelligence.</p></div><div class="step"><i>02</i><b>Strategise</b><p>Define audience, offer, messaging and campaign direction.</p></div><div class="step"><i>03</i><b>Create</b><p>Generate ideas, scripts, visuals, video and paid or organic creative.</p></div><div class="step"><i>04</i><b>Build</b><p>Assemble conversion pages, funnels and sales-agent workflows.</p></div><div class="step"><i>05</i><b>Validate</b><p>Check brand alignment, visual quality, conversion paths and readiness.</p></div><div class="step"><i>06</i><b>Learn</b><p>Use distribution, attribution and results to improve the next cycle.</p></div></div><div class="emphasis"><div><strong>One workflow starts the work. The system completes the sequence.</strong><p>Persistent jobs, agent orchestration, quality gates and exception recovery — not a stack of manual clicks.</p></div><span class="tag">AUTONOMOUS BY DESIGN</span></div></div></section>
-<section class="section" id="how"><div class="wrap"><div class="section-top"><div class="eyebrow"><span class="dot"></span> INSIDE THE SYSTEM</div><h2>Choose an outcome.<br>The workflow takes over.</h2><p>Explore the two journeys. Different starting points, shared creative, campaign and conversion infrastructure.</p></div><div class="tabs" role="tablist" aria-label="Workflow preview"><button id="tab-launch" class="tab active" role="tab" aria-selected="true" aria-controls="demo-panel" onclick="switchTab('launch')">Launch a client</button><button id="tab-content" class="tab" role="tab" aria-selected="false" aria-controls="demo-panel" onclick="switchTab('content')">Run daily content</button></div><div class="demo" id="demo-panel" role="tabpanel"><div class="demo-left"><div class="eyebrow" style="color:#557451"><span class="dot" style="background:#597d48"></span><span id="demo-label">WORKFLOW / ONE-DAY LAUNCH</span></div><h3 id="demo-title">From onboarding to launch-ready.</h3><p id="demo-description">Business intelligence becomes one coherent system: the campaign, conversion experience, acquisition creative and follow-up workflows.</p></div><div class="demo-right" id="demo-steps" aria-live="polite"></div></div></div></section>
-<section class="section control"><div class="wrap control-grid"><div><div class="eyebrow" style="color:#557451"><span class="dot" style="background:#597d48"></span> HUMAN CONTROL</div><h2>Autonomous execution.<br>Intentional decisions.</h2><p>The system should remove repetitive production work, not critical judgment. Creative assets are reviewed before distribution. Paid campaigns are prepared inside AA Console and pushed to Meta Ads Manager for human management.</p></div><ul class="control-list"><li>Final creative approval stays with your team</li><li>Paid media management stays in Meta Ads Manager</li><li>Authentic proof is preserved and verified</li><li>Attribution closes the feedback loop</li><li>Exceptions are flagged instead of silently published</li></ul></div></section>
-<section class="section"><div class="wrap"><div class="section-top"><div class="eyebrow"><span class="dot"></span> BUSINESS OUTCOMES</div><h2>A faster path to market.<br>A system that keeps moving.</h2><p>The goal is not to generate more assets for their own sake. It's to make customer-acquisition infrastructure faster to launch, easier to operate and more responsive to real results.</p></div><div class="outcomes"><div class="outcome"><h3>Speed without fragmentation</h3><p>Strategy, landing pages, agents and content are generated from the same client intelligence instead of being built in isolated silos.</p></div><div class="outcome"><h3>Quality without constant supervision</h3><p>Automated review, revision and production buffers reduce routine intervention while retaining final approval.</p></div><div class="outcome"><h3>Improvement through evidence</h3><p>Reporting and attribution inform future campaigns, creative angles and offers — with uncertainty visible where measurement is incomplete.</p></div></div></div></section>
-<section class="cta" id="vision"><div class="wrap"><div class="eyebrow" style="justify-content:center;color:var(--lime)"><span class="dot"></span> AA CONSOLE / THE NORTH STAR</div><h2>Your acquisition infrastructure.<br>Built once. Working every day.</h2><p>Launch a complete acquisition system for the next client. Keep producing for every client after that. One engine, from first brief to daily delivery.</p><div class="actions" style="justify-content:center"><a class="btn btn-primary" href="#modes">Explore the operating modes ↗</a><a class="btn btn-outline" href="#top">Back to top ↑</a></div><div class="note">Product vision concept. Capabilities shown describe the target system, not a claim that all workflows are currently live.</div></div></section></main>
-<footer class="footer"><div class="wrap footer-inner"><div class="brand"><span class="logo">AA</span> AA Console</div><div>The Autonomous Acquisition Engine</div><div>© <span id="year"></span> Attract Acquisition</div></div></footer>
-<script>
-const flows={launch:{label:'WORKFLOW / ONE-DAY LAUNCH',title:'From onboarding to launch-ready.',description:'Business intelligence becomes one coherent system: the campaign, conversion experience, acquisition creative and follow-up workflows.',steps:[['Agent-assisted onboarding','Capture business knowledge, proof, offers, brand and required permissions.'],['Campaign intelligence','Translate research into positioning, audiences, messaging and launch strategy.'],['Build acquisition infrastructure','Generate the campaign structure, landing pages and configured sales-agent workflows.'],['Produce launch creatives','Create reviewable paid and organic assets with captions, formats and CTAs.'],['Quality review and handoff','Validate links, routing, tracking and assets; prepare paid creative for Meta Ads Manager.']]},content:{label:'WORKFLOW / ALWAYS-ON',title:'A finished approval queue. Every morning.',description:'The daily system plans ahead, runs production in the background and prepares complete creative packages for your review.',steps:[['Select daily opportunities','Prioritise approved campaigns, content pillars, offers and available proof.'],['Produce all four assets','Generate one reel, one story and two static creatives using specialist pipelines.'],['Review and regenerate','Check quality, consistency and accuracy; revise or escalate defective outputs.'],['Prepare the delivery queue','Add captions, CTAs, formats and scheduled slots; maintain approved backup inventory.'],['Approve, distribute, learn','Your team approves; the configured distribution process delivers and performance informs tomorrow.']]}};
-function switchTab(name){const f=flows[name];document.getElementById('demo-label').textContent=f.label;document.getElementById('demo-title').textContent=f.title;document.getElementById('demo-description').textContent=f.description;document.getElementById('demo-steps').innerHTML=f.steps.map(([title,description],i)=>`<div class="line-step"><div class="check">${i+1}</div><div><b>${title}</b><p>${description}</p></div></div>`).join('');for(const n of ['launch','content']){const e=document.getElementById('tab-'+n);e.classList.toggle('active',n===name);e.setAttribute('aria-selected',String(n===name))}}
-switchTab('launch');document.getElementById('year').textContent=new Date().getFullYear();
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101412">
+  <meta name="description" content="Attract Acquisition builds and manages connected customer acquisition infrastructure for service businesses — from strategy and creative to campaigns, conversion, proof and performance.">
+  <meta property="og:title" content="Attract Acquisition — Customer Acquisition, Handled.">
+  <meta property="og:description" content="A managed acquisition service with strategy, creative, campaigns, conversion and reporting — all connected and run by one team.">
+  <meta property="og:type" content="website">
+  <title>Attract Acquisition — Customer Acquisition, Handled.</title>
+  <style>
+  :root{
+    --ink:#101412;
+    --ink-2:#171c19;
+    --ink-3:#27302a;
+    --paper:#f7f7f1;
+    --paper-2:#eeeeE6;
+    --white:#ffffff;
+    --muted:#677269;
+    --line:#dce2d8;
+    --accent:#d8fa78;
+    --accent-dark:#bce95b;
+    --accent-text:#203a08;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --radius:14px;
+    --wrap:1300px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:87px}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--accent);color:var(--ink)}
+  a{text-decoration:none;color:inherit}
+  button,input,textarea{font:inherit}
+  button{cursor:pointer}
+  button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #89ba2f;outline-offset:3px}
+  .container{width:min(calc(100% - 88px),var(--wrap));margin-inline:auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;font:600 11px/1.5 var(--mono);letter-spacing:.12em}
+  .eyebrow .dot{width:7px;height:7px;flex:none;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px rgba(216,250,120,.12)}
+  .serif{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-style:italic;letter-spacing:-.075em}
+  .section{padding:118px 0}
+  .section-top{display:flex;align-items:start;justify-content:space-between;gap:50px;margin-bottom:45px}
+  .section-top h2,.section-heading{font-size:clamp(39px,5.1vw,72px);line-height:1.035;letter-spacing:-.067em;font-weight:570;margin:22px 0 0;max-width:910px}
+  .section-top p{font-size:17px;line-height:1.65;color:var(--muted);max-width:380px;margin:45px 0 0}
+  .light-label{color:#809186}
+  .preamble{font-size:18px;line-height:1.65;color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:55px;padding:0 23px;font-size:13px;font-weight:700;letter-spacing:.004em;border-radius:6px;white-space:nowrap;border:1px solid transparent;transition:transform .2s,background .2s,border-color .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-accent{background:var(--accent);color:var(--accent-text)}
+  .btn-accent:hover{background:#e5ff9f}
+  .btn-dark{background:var(--ink);color:white}
+  .btn-outline-light{border-color:#566159;background:transparent;color:white}
+  .btn-outline-light:hover{border-color:#9ea99a}
+  .btn .arrow,.text-link .arrow{font-size:19px;font-weight:400;line-height:1}
+  .text-link{display:inline-flex;gap:18px;align-items:center;font-size:13px;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:8px}
+  .site-header{position:fixed;z-index:100;top:0;left:0;right:0;background:rgba(16,20,18,.94);backdrop-filter:blur(20px);border-bottom:1px solid #313a32;color:#fff}
+  .header-inner{height:75px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+  .brand{display:flex;align-items:center;gap:13px;min-width:0}
+  .brand-symbol{width:38px;height:38px;background:var(--accent);color:var(--ink);display:grid;place-items:center;border-radius:7px;font-size:18px;font-weight:900;letter-spacing:-.16em;padding-right:3px;transform:skew(-4deg)}
+  .brand-name{font-size:15px;font-weight:800;letter-spacing:-.028em;line-height:1.08}
+  .brand-name small{display:block;color:#9da99f;font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-top:5px}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links>a:not(.nav-cta){font-size:12px;font-weight:620;color:#bec6be;transition:color .15s}
+  .nav-links>a:hover{color:#fff}
+  .nav-cta{background:var(--accent);color:var(--ink);font-size:12px;font-weight:750;padding:13px 17px;border-radius:5px}
+  .mobile-menu-btn{display:none;background:none;border:1px solid #435043;color:white;padding:8px 11px;border-radius:5px;font-size:22px}
+  .hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:164px 0 0}
+  .hero:before{content:"";position:absolute;right:-140px;top:20px;width:800px;height:800px;opacity:.35;background:radial-gradient(circle at 50% 50%,#4c7c34 0,#27432b 25%,transparent 65%);filter:blur(90px);pointer-events:none}
+  .hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(#dce7d410 1px,transparent 1px),linear-gradient(90deg,#dce7d410 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(90deg,transparent 20%,black 100%);pointer-events:none}
+  .hero-content{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:64px;padding-bottom:100px}
+  .hero-copy{position:relative;z-index:2}
+  .hero .eyebrow{color:#bdc9bc}
+  .hero h1{font-size:clamp(66px,7.65vw,110px);line-height:.965;letter-spacing:-.08em;font-weight:570;margin:28px 0 29px;max-width:740px}
+  .hero h1 .serif{display:block;color:var(--accent);font-size:1.05em}
+  .hero-desc{font-size:18px;line-height:1.7;color:#acb8ac;max-width:580px;margin:0 0 31px}
+  .hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .hero-footnote{display:flex;align-items:center;gap:9px;color:#809084;font:11px/1.6 var(--mono);margin-top:30px}
+  .hero-footnote svg{flex:none}
+  .operation{background:linear-gradient(145deg,#2b342c,#172019);padding:15px;border:1px solid #4b5c4a;border-radius:14px;box-shadow:0 28px 90px #0007;transform:rotate(1deg);position:relative}
+  .operation:before{content:"";position:absolute;inset:-15px;border:1px solid #71816b4a;border-radius:21px;pointer-events:none}
+  .operation-inner{border-radius:9px;background:#111813;overflow:hidden}
+  .op-header{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px 20px;border-bottom:1px solid #344236}
+  .op-overline{display:flex;align-items:center;gap:7px;font:600 10px var(--mono);color:#a4b3a2;letter-spacing:.1em}
+  .live-light{height:7px;width:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px #c2ed5a6b}
+  .op-manage{color:#d4e4d0;border:1px solid #4b594b;border-radius:3px;padding:7px 8px;font:9px var(--mono);letter-spacing:.035em}
+  .op-intro{padding:29px 25px 23px}
+  .op-intro h3{margin:9px 0 0;font-size:23px;line-height:1.25;letter-spacing:-.05em;font-weight:580}
+  .op-label{font:10px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#849a85}
+  .op-steps{padding:0 20px 15px;display:grid;gap:8px}
+  .op-step{display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:12px;padding:13px 13px;border:1px solid #344535;border-radius:6px;background:#202b20}
+  .op-num{font:11px var(--mono);color:#b0bfad}
+  .op-name{font-weight:650;font-size:12px}
+  .op-detail{font-size:10px;color:#91a395;margin-top:3px}
+  .op-check{color:#d5f9a6;font-size:18px}
+  .op-review{background:#d8fa78;color:#1b3010;padding:14px 19px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;font-weight:750;margin:0 20px 20px;border-radius:6px}
+  .op-review span{font:10px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+  .hero-bar{position:relative;z-index:2;border-top:1px solid #38453c;background:#151b16}
+  .hero-bar-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:21px 0}
+  .hero-bar-label{font:10px var(--mono);letter-spacing:.15em;color:#92a194;white-space:nowrap;text-transform:uppercase}
+  .hero-bar-items{display:flex;justify-content:space-between;flex:1;max-width:860px;gap:16px}
+  .hero-bar-items span{font-size:12px;color:#d5ddd3;font-weight:550}
+  .hero-bar-items span:not(:last-child):after{content:"•";color:#6a7d68;margin-left:25px}
+  .statement{background:var(--paper);padding:106px 0 95px}
+  .statement-wrap{display:grid;grid-template-columns:240px 1fr;gap:90px;align-items:start}
+  .statement .eyebrow{padding-top:20px}
+  .statement h2{font-size:clamp(36px,5vw,69px);letter-spacing:-.07em;line-height:1.13;font-weight:530;margin:0;max-width:945px}
+  .statement h2 span{color:#8e9990}
+  .statement-under{display:flex;justify-content:space-between;gap:35px;border-top:1px solid var(--line);padding-top:27px;margin-top:40px}
+  .statement-under p{font-size:15px;line-height:1.7;color:var(--muted);max-width:570px;margin:0}
+  .statement-badge{align-self:start;border:1px solid #cdd6c9;border-radius:50px;padding:12px 17px;font:10px var(--mono);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+  .infra{background:#e9ede5;padding:120px 0 123px}
+  .infra .section-top p{max-width:345px}
+  .infra-ui{background:var(--paper);display:grid;grid-template-columns:330px 1fr;border:1px solid #cfd9cb;border-radius:14px;overflow:hidden;box-shadow:0 25px 50px #273e2212}
+  .infra-side{background:#18211b;padding:29px 20px;color:#fff}
+  .infra-sidehead{padding:0 14px 25px;border-bottom:1px solid #3f4a40;font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#a9b7a7}
+  .infra-tabs{padding-top:15px;display:grid;gap:4px}
+  .infra-tab{width:100%;background:transparent;color:#a6b5a5;display:flex;align-items:center;gap:14px;text-align:left;padding:16px 13px;border-radius:6px;border:1px solid transparent;transition:background .15s,color .15s}
+  .infra-tab:hover{background:#27332a;color:#fff}
+  .infra-tab.active{background:var(--accent);color:var(--ink)}
+  .infra-tab .tab-count{font:10px var(--mono);width:24px;flex:none}
+  .infra-tab .tab-label{font-size:14px;font-weight:690;flex:1}
+  .infra-tab .tab-arrow{font-size:17px;opacity:.9}
+  .infra-aside{border-top:1px solid #3f4a40;margin-top:30px;padding:23px 14px 0}
+  .infra-aside .aside-title{font:10px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:#9ba99b}
+  .infra-aside p{font-size:12px;color:#b8c4b7;line-height:1.6;margin:9px 0 0}
+  .infra-main{padding:49px 58px;min-height:496px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .infra-main:after{content:"";position:absolute;width:300px;height:300px;border:1px solid #e4e9df;right:-90px;bottom:-130px;border-radius:50%;box-shadow:0 0 0 60px #e9ece633,0 0 0 120px #e9ece633;pointer-events:none}
+  .infra-headingline{display:flex;align-items:center;justify-content:space-between;gap:20px;font:11px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#687a69;position:relative;z-index:1}
+  .infra-headingline strong{color:#2e4730;font-weight:600}
+  .infra-main h3{font-size:clamp(37px,4vw,58px);font-weight:570;line-height:1.08;letter-spacing:-.068em;margin:40px 0 15px;max-width:640px;position:relative;z-index:1}
+  .infra-main p{font-size:16px;line-height:1.7;color:#657167;margin:0;max-width:670px;position:relative;z-index:1}
+  .infra-deliverables{margin-top:auto;padding-top:40px;position:relative;z-index:1}
+  .deliverable-label{font:11px var(--mono);text-transform:uppercase;letter-spacing:.09em;color:#6a7a69;margin-bottom:14px}
+  .infra-tags{display:flex;gap:9px;flex-wrap:wrap}
+  .infra-tags span{border:1px solid #cbd6c9;background:#ecf0e8;border-radius:4px;padding:10px 12px;font-size:12px;font-weight:650}
+  .services{background:var(--paper)}
+  .service-group{border-top:1px solid #cdd8cb;padding:30px 0 45px;display:grid;grid-template-columns:225px 1fr;gap:45px}
+  .service-group-label{font:11px/1.7 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:#6d7d6e;padding-top:7px}
+  .service-group-label b{display:block;color:#223a25;font-size:12px;margin-bottom:8px}
+  .service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .service-card{background:#fff;border:1px solid #e2e6dd;border-radius:9px;padding:26px 23px 28px;min-height:228px;display:flex;flex-direction:column;transition:transform .15s,border-color .15s,box-shadow .15s}
+  .service-card:hover{transform:translateY(-3px);border-color:#bbc9b7;box-shadow:0 10px 35px #23331d0e}
+  .service-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:6px;background:#ecf3de;border:1px solid #dfe8d1;color:#33492a;font-size:20px;margin-bottom:37px}
+  .service-card h3{font-size:17px;letter-spacing:-.028em;margin:0 0 11px;font-weight:680}
+  .service-card p{font-size:13px;line-height:1.65;color:#657269;margin:0}
+  .two-ways{background:var(--ink);color:#fff}
+  .two-ways .section-top p{color:#a7b5a8}
+  .two-way-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+  .way-card{border:1px solid #3a4c3b;border-radius:12px;padding:38px 40px 43px;min-height:476px;display:flex;flex-direction:column;background:linear-gradient(140deg,#242e24 0%,#151c17 77%);position:relative;overflow:hidden}
+  .way-card:nth-child(2){background:linear-gradient(140deg,#293829 0%,#151c17 77%)}
+  .way-card:before{position:absolute;content:"";height:300px;width:300px;border:1px solid #ffffff11;right:-160px;top:-160px;border-radius:50%;box-shadow:0 0 0 45px #ffffff07,0 0 0 90px #ffffff05}
+  .way-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
+  .way-num{font:11px var(--mono);letter-spacing:.1em;color:#b5c6b3}
+  .way-pill{font:10px var(--mono);color:var(--accent);border:1px solid #5a754c;padding:8px 10px;border-radius:30px}
+  .way-card h3{font-size:clamp(38px,4vw,56px);line-height:1.06;letter-spacing:-.07em;font-weight:560;margin:48px 0 18px;position:relative}
+  .way-card>p{color:#bdc9bd;font-size:15px;line-height:1.65;margin:0;max-width:470px}
+  .way-card ul{padding:25px 0 0;display:grid;gap:14px;margin:auto 0 0;list-style:none;border-top:1px solid #3b483c}
+  .way-card li{display:flex;align-items:center;gap:12px;font-size:13px;color:#e6ede2}
+  .way-card li:before{content:"↗";display:grid;place-items:center;width:22px;height:22px;flex:none;background:#3a4932;border-radius:50%;color:var(--accent);font-size:14px}
+  .caveat{color:#91a190;font-size:11px;line-height:1.6;margin:21px 0 0}
+  .proof{background:var(--paper)}
+  .proof-header{display:grid;grid-template-columns:1fr .45fr;gap:75px;align-items:end;margin-bottom:53px}
+  .proof-header h2{font-size:clamp(43px,5vw,70px);line-height:1.06;letter-spacing:-.069em;font-weight:560;margin:20px 0 0;max-width:840px}
+  .proof-header p{color:#69766a;font-size:16px;line-height:1.75;margin:0 0 8px}
+  .proof-feature{display:grid;grid-template-columns:1.3fr .7fr;gap:16px}
+  .proof-image{min-height:450px;position:relative;overflow:hidden;border-radius:11px;background:#16251b;color:white;display:flex;flex-direction:column;justify-content:space-between;padding:35px 40px}
+  .proof-image:before{content:"";width:750px;height:750px;position:absolute;border:1px solid #76996d55;border-radius:50%;top:90px;right:-210px;box-shadow:0 0 0 46px #63885a13,0 0 0 110px #719d6c17,0 0 0 170px #719d6c0b}
+  .proof-image:after{content:"";width:280px;height:280px;position:absolute;right:12%;top:22%;background:radial-gradient(circle,#dcfc99 0%,#6aa052 12%,transparent 72%);filter:blur(30px);opacity:.45}
+  .proof-image .proof-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;font:10px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:#b8cbb3}
+  .proof-image .proof-big{position:relative;z-index:1;font-size:clamp(38px,4.8vw,75px);letter-spacing:-.07em;line-height:1.05;font-weight:560;max-width:660px}
+  .proof-image .proof-big em{color:var(--accent);font-family:Georgia,serif;font-weight:400}
+  .proof-side{display:flex;flex-direction:column;gap:14px}
+  .proof-small{flex:1;border:1px solid #d9e1d5;border-radius:11px;background:#fff;padding:24px 26px;display:flex;flex-direction:column;gap:12px}
+  .proof-small small{font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#7c8c78}
+  .proof-small h3{font-size:22px;letter-spacing:-.04em;line-height:1.2;margin:auto 0 0;font-weight:590}
+  .proof-small p{font-size:12px;line-height:1.6;color:#778276;margin:0}
+  .proof-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:24px}
+  .proof-step{position:relative;border-top:1px solid #cdd8c8;padding-top:20px}
+  .proof-step:not(:last-child):after{content:"→";position:absolute;right:10px;top:-12px;color:#697d61;background:var(--paper);padding:0 6px}
+  .proof-step b{font:11px var(--mono);color:#697c65}
+  .proof-step span{font-size:13px;display:block;max-width:160px;font-weight:680;line-height:1.45;margin-top:12px}
+  .management{background:#e9ede5}
+  .management-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px;align-items:center}
+  .management h2{font-size:clamp(41px,4.8vw,67px);letter-spacing:-.067em;line-height:1.07;font-weight:550;margin:24px 0}
+  .management p{font-size:16px;line-height:1.7;color:#677366;max-width:510px}
+  .management-list{display:grid;gap:14px;margin-top:31px}
+  .management-list span{display:flex;gap:12px;align-items:center;font-size:13px;font-weight:690}
+  .management-list span:before{content:"✓";font-size:12px;display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#d8f4b0;color:#344d22}
+  .management-stack{background:#18221a;color:#fff;padding:22px;border-radius:12px;border:1px solid #384b37;box-shadow:0 18px 50px #101f1122}
+  .management-stack-top{font:10px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:#a3b5a1;border-bottom:1px solid #3a4b3a;padding:6px 7px 19px}
+  .manager-row{display:flex;align-items:center;gap:15px;padding:18px 9px;border-bottom:1px solid #354635}
+  .manager-row:last-child{border-bottom:0}
+  .manager-index{color:#93a391;font:11px var(--mono);flex:none}
+  .manager-icon{width:38px;height:38px;display:grid;place-items:center;flex:none;border:1px solid #546b50;background:#2a3b2a;border-radius:7px;font-size:18px}
+  .manager-text{flex:1}
+  .manager-text b{display:block;font-size:13px;line-height:1.45}
+  .manager-text small{display:block;color:#9cac9d;font-size:11px;line-height:1.5;margin-top:3px}
+  .manager-status{font:10px var(--mono);padding:7px 9px;border-radius:3px;background:#313e31;color:#bfc9bf;text-align:center}
+  .manager-status.highlight{background:var(--accent);color:#243513}
+  .fit{background:var(--paper);padding:113px 0}
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:110px;align-items:start}
+  .fit h2{font-size:clamp(44px,5vw,68px);line-height:1.06;letter-spacing:-.068em;font-weight:560;margin:24px 0}
+  .fit-intro{font-size:16px;line-height:1.7;color:#667368;max-width:480px}
+  .fit-lines{margin-top:27px;border-top:1px solid #d9e2d6}
+  .fit-line{display:grid;grid-template-columns:31px 1fr 22px;align-items:center;gap:14px;border-bottom:1px solid #d9e2d6;padding:23px 3px}
+  .fit-line span{font:11px var(--mono);color:#8a978a}
+  .fit-line strong{font-size:19px;letter-spacing:-.04em;font-weight:620}
+  .fit-line .small-arrow{color:#5f715b;font-size:19px}
+  .fit-box{background:#e8edde;border-radius:10px;padding:25px 28px;margin-top:25px}
+  .fit-box strong{display:block;font-size:13px;margin-bottom:8px}
+  .fit-box p{font-size:12px;line-height:1.65;color:#647460;margin:0}
+  .faq{background:#fff;padding:108px 0}
+  .faq-wrap{display:grid;grid-template-columns:.68fr 1.32fr;gap:95px}
+  .faq h2{font-size:clamp(44px,4.5vw,65px);line-height:1.05;letter-spacing:-.07em;font-weight:560;margin:24px 0}
+  .faq-intro{color:#687569;line-height:1.65;font-size:15px;max-width:310px}
+  .faq-list{border-top:1px solid #dce4d9}
+  .faq details{border-bottom:1px solid #dce4d9;padding:0}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:25px;padding:24px 0;font-size:16px;line-height:1.45;font-weight:670}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";font-size:25px;line-height:1;font-weight:300;color:#49663e}
+  .faq details[open] summary:after{content:"−"}
+  .faq details p{font-size:14px;line-height:1.75;color:#657365;margin:0 0 23px;max-width:680px}
+  .contact{background:var(--accent);padding:105px 0 100px;position:relative;overflow:hidden}
+  .contact:after{position:absolute;content:"AA";right:-90px;bottom:-200px;font-size:600px;letter-spacing:-.2em;font-weight:800;color:#c6ed6b;line-height:1;pointer-events:none}
+  .contact-grid{display:grid;grid-template-columns:1fr .75fr;gap:90px;position:relative;z-index:2;align-items:start}
+  .contact .eyebrow{color:#425e26}
+  .contact h2{font-size:clamp(55px,6.7vw,97px);line-height:.98;letter-spacing:-.08em;font-weight:560;margin:25px 0 25px}
+  .contact h2 em{font-family:Georgia,serif;font-weight:400}
+  .contact p{font-size:17px;line-height:1.65;color:#3c542c;max-width:500px}
+  .contact-form{background:#f8faef;padding:30px;border-radius:10px;box-shadow:0 18px 50px #5a732526}
+  .contact-form h3{font-size:22px;letter-spacing:-.045em;margin:0 0 8px}
+  .contact-form>p{font-size:12px;color:#677362;margin:0 0 24px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .field{display:flex;flex-direction:column;gap:7px;margin-bottom:13px}
+  .field label{font:10px var(--mono);text-transform:uppercase;letter-spacing:.07em;color:#556552}
+  .field input,.field textarea{border:1px solid #d1dacd;background:#fff;border-radius:5px;min-height:45px;width:100%;outline:0;padding:11px 12px;font-size:13px;color:#1c281d;transition:border-color .15s}
+  .field input:focus,.field textarea:focus{border-color:#7ca64e;box-shadow:0 0 0 3px #d8edb6}
+  .field textarea{min-height:82px;resize:vertical}
+  .form-submit{width:100%;margin-top:5px;justify-content:space-between}
+  .form-note{font:10px/1.6 var(--mono);color:#738072;margin:12px 0 0!important}
+  .footer{background:#101412;color:#fff;padding:42px 0 27px}
+  .footer-top{display:flex;justify-content:space-between;align-items:start;gap:35px;padding-bottom:60px}
+  .footer .brand-symbol{height:41px;width:41px}
+  .footer-right{display:flex;gap:38px;flex-wrap:wrap;align-items:center}
+  .footer-right a{color:#c6d0c6;font-size:12px}
+  .footer-right a:hover{color:var(--accent)}
+  .footer-bottom{padding-top:19px;display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;border-top:1px solid #354138;color:#849487;font:10px/1.5 var(--mono)}
+  .reveal{opacity:1;transform:none;transition:opacity .65s,transform .65s}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  @media (max-width:1180px){
+   .container{width:min(calc(100% - 60px),var(--wrap))}
+   .hero-content{gap:36px}
+   .hero h1{font-size:clamp(58px,7vw,86px)}
+   .operation{transform:none}
+   .hero-bar-items span:not(:last-child):after{margin-left:14px}
+   .service-group{grid-template-columns:170px 1fr;gap:30px}
+   .service-grid{gap:11px}
+   .service-card{padding:23px 18px}
+   .management-grid{gap:55px}
+   .contact-grid{gap:45px}
+  }
+  @media (max-width:940px){
+   .hero{padding-top:136px}
+   .hero-content{grid-template-columns:1fr;gap:68px;padding-bottom:75px}
+   .hero-copy{max-width:700px}
+   .hero h1{font-size:clamp(65px,10vw,97px)}
+   .operation{max-width:650px;justify-self:stretch;margin:auto;width:100%}
+   .hero-bar-inner{display:block}
+   .hero-bar-items{margin-top:17px;max-width:100%}
+   .statement-wrap{grid-template-columns:1fr;gap:18px}
+   .statement .eyebrow{padding-top:0}
+   .infra-ui{grid-template-columns:245px 1fr}
+   .infra-main{padding:37px 30px}
+   .service-group{display:block}
+   .service-group-label{margin-bottom:20px}
+   .proof-header{grid-template-columns:1fr;gap:16px}
+   .proof-header p{max-width:620px}
+   .management-grid,.fit-grid,.faq-wrap{gap:40px}
+   .management-grid{grid-template-columns:1fr 1fr}
+   .contact-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+   html{scroll-padding-top:70px}
+   .container{width:min(calc(100% - 36px),var(--wrap))}
+   .header-inner{height:68px}
+   .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#19231b;border-bottom:1px solid #354b39;padding:20px 18px;flex-direction:column;align-items:stretch;gap:0}
+   .nav-links.open{display:flex}
+   .nav-links>a{padding:13px 8px;font-size:14px!important}
+   .nav-cta{text-align:center;margin-top:10px}
+   .mobile-menu-btn{display:block}
+   .hero{padding-top:125px}
+   .hero-content{gap:54px}
+   .hero h1{font-size:clamp(52px,12vw,83px)}
+   .hero-desc{font-size:16px}
+   .hero-bar-items{display:grid;grid-template-columns:repeat(2,1fr);row-gap:10px}
+   .hero-bar-items span:not(:last-child):after{display:none}
+   .statement{padding:76px 0}
+   .statement h2{font-size:clamp(35px,8.6vw,61px)}
+   .statement-under{flex-direction:column}
+   .statement-badge{align-self:flex-start}
+   .section{padding:84px 0}
+   .section-top{display:block}
+   .section-top h2{font-size:clamp(37px,9vw,60px)}
+   .section-top p{margin-top:20px;max-width:620px}
+   .infra-ui{grid-template-columns:1fr}
+   .infra-side{padding:18px 15px}
+   .infra-sidehead{padding-bottom:14px}
+   .infra-tabs{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+   .infra-tab{padding:10px;min-height:55px}
+   .infra-tab .tab-label{font-size:12px}
+   .infra-tab .tab-count,.infra-tab .tab-arrow,.infra-aside{display:none}
+   .infra-main{min-height:420px}
+   .service-grid{grid-template-columns:repeat(2,1fr)}
+   .two-way-grid{grid-template-columns:1fr}
+   .way-card{min-height:370px}
+   .proof-feature{grid-template-columns:1fr}
+   .proof-image{min-height:350px}
+   .proof-side{display:grid;grid-template-columns:1fr 1fr}
+   .proof-small{min-height:170px}
+   .proof-steps{grid-template-columns:repeat(5,1fr)}
+   .management-grid,.fit-grid,.faq-wrap,.contact-grid{grid-template-columns:1fr}
+   .management-stack{margin-top:10px}
+   .contact{padding:83px 0}
+   .contact h2{max-width:700px}
+   .contact-form{max-width:620px;width:100%}
+   .fit{padding:85px 0}
+   .faq{padding:83px 0}
+  }
+  @media (max-width:480px){
+   .brand-name{font-size:13px}
+   .hero h1{font-size:clamp(49px,13vw,69px)}
+   .hero-actions{align-items:stretch}
+   .hero-actions .btn{width:100%}
+   .hero-actions .btn-outline-light{border:0;min-height:39px}
+   .hero-footnote{font-size:10px}
+   .operation{padding:8px}
+   .op-header{padding:13px}
+   .op-manage{display:none}
+   .op-intro{padding:21px 18px}
+   .op-steps{padding:0 12px 12px}
+   .op-step{grid-template-columns:26px 1fr auto;padding:12px 10px;gap:9px}
+   .op-review{margin:0 12px 12px;padding:13px 12px}
+   .hero-bar-items{grid-template-columns:1fr 1fr}
+   .statement h2{font-size:36px}
+   .infra-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+   .infra-main{padding:29px 22px;min-height:460px}
+   .infra-main h3{font-size:38px;margin-top:30px}
+   .infra-main p{font-size:14px}
+   .service-grid{grid-template-columns:1fr}
+   .service-card{min-height:180px}
+   .service-icon{margin-bottom:24px}
+   .way-card{padding:28px 24px}
+   .way-card h3{font-size:40px}
+   .proof-image{padding:23px 24px}
+   .proof-image .proof-big{font-size:44px}
+   .proof-side{grid-template-columns:1fr}
+   .proof-small{min-height:170px}
+   .proof-steps{grid-template-columns:1fr 1fr;gap:24px}
+   .proof-step:not(:last-child):after{display:none}
+   .management h2,.fit h2,.faq h2{font-size:45px}
+   .management-stack{padding:12px}
+   .manager-row{gap:9px}
+   .manager-icon{display:none}
+   .manager-status{font-size:9px}
+   .form-row{grid-template-columns:1fr;gap:0}
+   .contact-form{padding:23px}
+   .contact h2{font-size:57px}
+   .footer-top{flex-direction:column}
+  }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Attract Acquisition home">
+        <span class="brand-symbol" aria-hidden="true">AA</span>
+        <span class="brand-name">ATTRACT<br>ACQUISITION <small>Managed acquisition infrastructure</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#infrastructure">The infrastructure</a>
+        <a href="#services">What we handle</a>
+        <a href="#delivery">How we deliver</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contact" class="nav-cta">Talk to our team ↗</a>
+      </nav>
+      <button class="mobile-menu-btn" type="button" id="menuBtn" aria-controls="navLinks" aria-expanded="false" aria-label="Open navigation menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="dot"></span> Customer acquisition, as a managed service</div>
+          <h1>Customer acquisition, <span class="serif">handled.</span></h1>
+          <p class="hero-desc">We build and operate the infrastructure that helps service businesses get seen, build trust and win more of the right customers. Strategy, offers, creative, campaigns and conversion — managed by one accountable team.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-accent">Discuss your acquisition strategy <span class="arrow">↗</span></a>
+            <a href="#infrastructure" class="btn btn-outline-light">See what we manage <span class="arrow">↓</span></a>
+          </div>
+          <div class="hero-footnote">
+            <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 10 3.2 3.2L15.5 6" stroke="#d8fa78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="9" stroke="#6f8768"/></svg>
+            Done for you. Human managed. Powered by our own delivery infrastructure.
+          </div>
+        </div>
+        <div class="operation" aria-label="Illustration of Attract Acquisition's managed service workflow">
+          <div class="operation-inner">
+            <div class="op-header">
+              <div class="op-overline"><span class="live-light"></span> AA / SERVICE DELIVERY</div>
+              <div class="op-manage">OPERATED BY OUR TEAM</div>
+            </div>
+            <div class="op-intro">
+              <div class="op-label">Behind every client engagement</div>
+              <h3>One connected acquisition operation.</h3>
+            </div>
+            <div class="op-steps">
+              <div class="op-step"><div class="op-num">01</div><div><div class="op-name">Find the right market</div><div class="op-detail">Business context · niche intelligence</div></div><div class="op-check">✓</div></div>
+              <div class="op-step"><div class="op-num">02</div><div><div class="op-name">Engineer the right offer</div><div class="op-detail">Positioning · audience-specific value</div></div><div class="op-check">✓</div></div>
+              <div class="op-step"><div class="op-num">03</div><div><div class="op-name">Build the campaign</div><div class="op-detail">Creative · pages · lead pathways</div></div><div class="op-check">✓</div></div>
+              <div class="op-step"><div class="op-num">04</div><div><div class="op-name">Run and manage distribution</div><div class="op-detail">Organic · paid media · proof</div></div><div class="op-check">✓</div></div>
+              <div class="op-step"><div class="op-num">05</div><div><div class="op-name">Measure and improve</div><div class="op-detail">Performance · attribution · feedback</div></div><div class="op-check">↗</div></div>
+            </div>
+            <div class="op-review"><span>Human expertise at every critical decision</span> <b>MANAGED, NOT SELF-SERVE</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bar">
+        <div class="container hero-bar-inner">
+          <span class="hero-bar-label">The connected service</span>
+          <div class="hero-bar-items"><span>Strategy</span><span>Content</span><span>Paid media</span><span>Conversion</span><span>Proof</span><span>Measurement</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement" aria-labelledby="statement-title">
+      <div class="container statement-wrap">
+        <div class="eyebrow"><span class="dot" style="background:#526f3c"></span> A different model</div>
+        <div>
+          <h2 id="statement-title">You don't need another tool to operate. <span>You need an acquisition team with the infrastructure to execute.</span></h2>
+          <div class="statement-under">
+            <p>Most growth efforts fragment across agencies, freelancers, platforms and handoffs. We connect the work into one managed delivery service — from understanding your customers to creating the next campaign and learning from the results.</p>
+            <div class="statement-badge">Service first. Technology behind it.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section infra" id="infrastructure" aria-labelledby="infra-title">
+      <div class="container">
+        <div class="section-top reveal">
+          <div><div class="eyebrow"><span class="dot" style="background:#526f3c"></span> The service infrastructure / 01—06</div>
+            <h2 id="infra-title">Everything connects.<br><span class="serif">Nothing operates in isolation.</span></h2>
+          </div>
+          <p>Explore the six connected functions your Attract Acquisition team coordinates, produces and manages on your behalf.</p>
+        </div>
+        <div class="infra-ui reveal">
+          <div class="infra-side">
+            <div class="infra-sidehead">Acquisition delivery map</div>
+            <div class="infra-tabs" role="tablist" aria-label="Service infrastructure stages">
+              <button type="button" class="infra-tab active" role="tab" aria-selected="true" aria-controls="stagePanel" id="tab-0" data-stage="0"><span class="tab-count">01</span><span class="tab-label">Understand</span><span class="tab-arrow">↗</span></button>
+              <button type="button" class="infra-tab" role="tab" aria-selected="false" aria-controls="stagePanel" id="tab-1" data-stage="1"><span class="tab-count">02</span><span class="tab-label">Position</span><span class="tab-arrow">↗</span></button>
+              <button type="button" class="infra-tab" role="tab" aria-selected="false" aria-controls="stagePanel" id="tab-2" data-stage="2"><span class="tab-count">03</span><span class="tab-label">Produce</span><span class="tab-arrow">↗</span></button>
+              <button type="button" class="infra-tab" role="tab" aria-selected="false" aria-controls="stagePanel" id="tab-3" data-stage="3"><span class="tab-count">04</span><span class="tab-label">Distribute</span><span class="tab-arrow">↗</span></button>
+              <button type="button" class="infra-tab" role="tab" aria-selected="false" aria-controls="stagePanel" id="tab-4" data-stage="4"><span class="tab-count">05</span><span class="tab-label">Convert</span><span class="tab-arrow">↗</span></button>
+              <button type="button" class="infra-tab" role="tab" aria-selected="false" aria-controls="stagePanel" id="tab-5" data-stage="5"><span class="tab-count">06</span><span class="tab-label">Improve</span><span class="tab-arrow">↗</span></button>
+            </div>
+            <div class="infra-aside"><div class="aside-title">Your experience</div><p>One point of contact and a managed delivery process — not six dashboards for you to learn.</p></div>
+          </div>
+          <div class="infra-main" id="stagePanel" role="tabpanel" aria-labelledby="tab-0" tabindex="0" aria-live="polite">
+            <div class="infra-headingline"><span id="stageCounter">STAGE 01 / 06</span><strong>YOUR TEAM HANDLES THIS</strong></div>
+            <h3 id="stageTitle">We learn your business before we go after its market.</h3>
+            <p id="stageDescription">We assemble your business, customer, competitor, brand and proof intelligence — then research specific market segments where a more relevant message can create an advantage.</p>
+            <div class="infra-deliverables"><div class="deliverable-label">What this includes</div><div class="infra-tags" id="stageTags"><span>Business intelligence</span><span>Ideal customer profiles</span><span>Competitor research</span><span>Micro-niche opportunities</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-top reveal">
+          <div><div class="eyebrow"><span class="dot" style="background:#526f3c"></span> What we handle</div><h2 id="services-title">A complete service.<br><span class="serif">Not a collection of add-ons.</span></h2></div>
+          <p>These functions work together inside your engagement. The final mix of services and channels is defined by the agreed strategy and scope.</p>
+        </div>
+        <div class="service-group reveal">
+          <div class="service-group-label"><b>01 / Think strategically</b>Find the right customer.<br>Make the right proposition.</div>
+          <div class="service-grid">
+            <article class="service-card"><div class="service-icon" aria-hidden="true">◎</div><h3>Business & market intelligence</h3><p>Research your customers, competitors, market, positioning and brand so decisions start with context.</p></article>
+            <article class="service-card"><div class="service-icon" aria-hidden="true">⌕</div><h3>Micro-niche opportunities</h3><p>Find focused audiences and underserved segments worth reaching with specific campaigns.</p></article>
+            <article class="service-card"><div class="service-icon" aria-hidden="true">◇</div><h3>Offer architecture</h3><p>Sharpen your core service offer and craft campaign-specific offers built around audience needs.</p></article>
+          </div>
+        </div>
+        <div class="service-group reveal">
+          <div class="service-group-label"><b>02 / Make and reach</b>Create the assets.<br>Put them to work.</div>
+          <div class="service-grid">
+            <article class="service-card"><div class="service-icon" aria-hidden="true">▦</div><h3>Campaign planning & production</h3><p>Connect each audience, offer and message to an executable organic and paid campaign plan.</p></article>
+            <article class="service-card"><div class="service-icon" aria-hidden="true">✳</div><h3>Content & creative production</h3><p>Produce images, reels, stories, carousels and advertising creative; adapt and repurpose for each channel.</p></article>
+            <article class="service-card"><div class="service-icon" aria-hidden="true">↗</div><h3>Channel distribution & management</h3><p>Coordinate Facebook and Instagram content and human-managed Meta and Google advertising activity.</p></article>
+          </div>
+        </div>
+        <div class="service-group reveal">
+          <div class="service-group-label"><b>03 / Convert and compound</b>Turn attention into action.<br>Learn what works.</div>
+          <div class="service-grid">
+            <article class="service-card"><div class="service-icon" aria-hidden="true">▤</div><h3>Landing pages & conversion</h3><p>Build offer-focused landing experiences, lead magnets and relevant enquiry pathways where appropriate.</p></article>
+            <article class="service-card"><div class="service-icon" aria-hidden="true">✦</div><h3>Proof & reputation</h3><p>Capture real customer evidence, transform it into credible assets and distribute it across suitable touchpoints.</p></article>
+            <article class="service-card"><div class="service-icon" aria-hidden="true">⌁</div><h3>Tracking & improvement</h3><p>Review campaign, content and enquiry signals to inform the next opportunity, offer and creative direction.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section two-ways" id="delivery" aria-labelledby="delivery-title">
+      <div class="container">
+        <div class="section-top reveal">
+          <div><div class="eyebrow light-label"><span class="dot"></span> How the service works</div><h2 id="delivery-title">We build the foundation.<br><span class="serif" style="color:var(--accent)">Then we keep it moving.</span></h2></div>
+          <p>Two complementary types of work, run by the same team and informed by the same commercial strategy.</p>
+        </div>
+        <div class="two-way-grid reveal">
+          <article class="way-card">
+            <div class="way-head"><span class="way-num">01 / INITIAL BUILD</span><span class="way-pill">GO-TO-MARKET</span></div>
+            <h3>Launch an acquisition campaign.</h3>
+            <p>We understand the business, identify an opportunity and bring together the offer, campaign assets and conversion journey needed for launch.</p>
+            <ul>
+              <li>Market and audience strategy</li><li>Core and campaign-specific offers</li><li>Campaign assets for organic and paid</li><li>Landing pages, lead capture and handoff where scoped</li><li>Manager review, activation and channel launch</li>
+            </ul>
+          </article>
+          <article class="way-card">
+            <div class="way-head"><span class="way-num">02 / ONGOING DELIVERY</span><span class="way-pill">CONTINUOUS PRESENCE</span></div>
+            <h3>Keep building demand and trust.</h3>
+            <p>Beyond a campaign launch, we maintain content production, proof collection, publishing and performance reviews so the operation keeps learning.</p>
+            <ul>
+              <li>Recurring brand and organic content production</li><li>Paid creative updates and media management</li><li>Customer proof capture and repurposing</li><li>Publishing coordination across connected channels</li><li>Performance analysis and next-cycle planning</li>
+            </ul>
+          </article>
+        </div>
+        <p class="caveat">Exact deliverables, cadence, media channels and launch dates are agreed per engagement. Platform approvals, access and media performance depend on external factors.</p>
+      </div>
+    </section>
+
+    <section class="section proof" id="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="proof-header reveal">
+          <div><div class="eyebrow"><span class="dot" style="background:#526f3c"></span> The credibility advantage</div><h2 id="proof-title">Good work deserves<br><span class="serif">to be seen.</span></h2></div>
+          <p>For a service business, the work itself is some of the most compelling marketing. We help turn genuine outcomes into visible, usable proof.</p>
+        </div>
+        <div class="proof-feature reveal">
+          <div class="proof-image">
+            <div class="proof-top"><span>Proof-led customer acquisition</span><span>Built on real work ↗</span></div>
+            <div class="proof-big">Real outcomes.<br>Stronger <em>credibility.</em><br>More reasons<br>to choose you.</div>
+          </div>
+          <div class="proof-side">
+            <div class="proof-small"><small>Capture / six possible methods</small><h3>Don't let valuable customer evidence disappear.</h3><p>Request, interview, field capture, integration, manual upload and outcome follow-up workflows can all feed the process.</p></div>
+            <div class="proof-small"><small>Distribution / connected presence</small><h3>Put proof where buying decisions happen.</h3><p>Adapt verified evidence for relevant social, search, campaign and conversion touchpoints, subject to permissions.</p></div>
+          </div>
+        </div>
+        <div class="proof-steps reveal" aria-label="Proof-to-market process">
+          <div class="proof-step"><b>01</b><span>Customer outcome</span></div><div class="proof-step"><b>02</b><span>Capture real evidence</span></div><div class="proof-step"><b>03</b><span>Check permission and accuracy</span></div><div class="proof-step"><b>04</b><span>Produce and repurpose</span></div><div class="proof-step"><b>05</b><span>Distribute and learn</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section management" id="management" aria-labelledby="management-title">
+      <div class="container management-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="dot" style="background:#526f3c"></span> Behind the service</div>
+          <h2 id="management-title">Our infrastructure.<br><span class="serif">Our responsibility.</span></h2>
+          <p>AA Console is the private operational environment our account managers and specialists use to coordinate your delivery. It connects research, production, approvals, channel work and reporting.</p>
+          <p><strong>You're engaging a service team, not purchasing access to software.</strong> Automation helps our people execute consistently; our people remain responsible for decisions, quality and delivery.</p>
+          <div class="management-list"><span>A dedicated point of coordination</span><span>Human review before publishing and activation</span><span>Specialists managing paid campaigns</span><span>Transparent deliverables and performance discussions</span></div>
+        </div>
+        <div class="management-stack reveal" aria-label="AA managed workflow overview">
+          <div class="management-stack-top">AA CONSOLE / INTERNAL OPERATIONS · ILLUSTRATIVE</div>
+          <div class="manager-row"><div class="manager-index">01</div><div class="manager-icon" aria-hidden="true">⌕</div><div class="manager-text"><b>Research and plan</b><small>Business intelligence, micro-niches, offers and campaign structure</small></div><div class="manager-status">PREPARE</div></div>
+          <div class="manager-row"><div class="manager-index">02</div><div class="manager-icon" aria-hidden="true">▦</div><div class="manager-text"><b>Create in connected workflows</b><small>Content, proof, landing pages and lead capture assets</small></div><div class="manager-status">PRODUCE</div></div>
+          <div class="manager-row"><div class="manager-index">03</div><div class="manager-icon" aria-hidden="true">✓</div><div class="manager-text"><b>Account manager quality gate</b><small>Evaluate, revise and approve work before it is released</small></div><div class="manager-status highlight">HUMAN REVIEW</div></div>
+          <div class="manager-row"><div class="manager-index">04</div><div class="manager-icon" aria-hidden="true">↗</div><div class="manager-text"><b>Specialist-managed deployment</b><small>Organic publishing, paid-media execution and conversion launch</small></div><div class="manager-status">MANAGE</div></div>
+          <div class="manager-row"><div class="manager-index">05</div><div class="manager-icon" aria-hidden="true">⌁</div><div class="manager-text"><b>Review, report and refine</b><small>Use measurable signals to guide the following cycle</small></div><div class="manager-status">IMPROVE</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fit" aria-labelledby="fit-title">
+      <div class="container fit-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="dot" style="background:#526f3c"></span> Who we work with</div>
+          <h2 id="fit-title">Built for businesses that sell <span class="serif">real services.</span></h2>
+          <p class="fit-intro">Especially where the sale depends on a clear proposition, visible expertise and the confidence that the right team will deliver.</p>
+          <a href="#contact" class="text-link">Explore a fit for your business <span class="arrow">↗</span></a>
+        </div>
+        <div class="reveal">
+          <div class="fit-lines">
+            <div class="fit-line"><span>01</span><strong>Home improvement & installation</strong><span class="small-arrow">↗</span></div>
+            <div class="fit-line"><span>02</span><strong>Residential wellness & lifestyle</strong><span class="small-arrow">↗</span></div>
+            <div class="fit-line"><span>03</span><strong>Specialist local services</strong><span class="small-arrow">↗</span></div>
+            <div class="fit-line"><span>04</span><strong>Established service brands</strong><span class="small-arrow">↗</span></div>
+          </div>
+          <div class="fit-box"><strong>Not every business needs every channel.</strong><p>We identify the right segments, offers and routes to market first, then agree the service scope around those priorities.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-wrap">
+        <div class="reveal"><div class="eyebrow"><span class="dot" style="background:#526f3c"></span> Frequently asked</div><h2 id="faq-title">The important<br><span class="serif">questions.</span></h2><p class="faq-intro">How the service operates, where our team is involved and what the engagement actually means.</p></div>
+        <div class="faq-list reveal">
+          <details open><summary>Is this a software subscription or a managed service?</summary><p>It is a managed customer acquisition service. Your agreement is with Attract Acquisition for defined outcomes and delivery activities. AA Console is the private infrastructure our team uses to do the work; it is not a self-service product you need to learn or operate.</p></details>
+          <details><summary>Who actually creates, approves and runs the campaigns?</summary><p>Our internal workflows help prepare research, content, offers, pages and campaign assets. Account managers review work at key approval gates. Paid ads are configured, launched and managed by human advertising specialists in the relevant ad platforms, rather than left to an unattended publishing process.</p></details>
+          <details><summary>Do you manage both ongoing content and specific campaigns?</summary><p>Yes. The operating model is designed to support recurring organic content and proof distribution alongside focused campaigns for particular audiences and offers. The exact mix and cadence depend on your agreed engagement.</p></details>
+          <details><summary>Do you build landing pages, lead magnets and sales agents?</summary><p>These are available parts of the acquisition infrastructure when they make sense for the strategy and are included in scope. A campaign can include a dedicated offer page and lead capture pathway, with appropriate human review before publication.</p></details>
+          <details><summary>How will I know what is working?</summary><p>We review available channel performance, campaign activity and conversion data, then use those signals to inform strategy and reporting. Revenue attribution depends on what tracking, account access and source data are available, so we distinguish measured results from estimates.</p></details>
+          <details><summary>What do you need from our business?</summary><p>We start with your business context, positioning, target customers, existing offers, brand materials, approved customer proof and access to any agreed channels. Our team manages the process and coordinates the approvals needed to work responsibly on your behalf.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="reveal"><div class="eyebrow"><span class="dot" style="background:#405b24"></span> Start the conversation</div><h2 id="contact-title">Let's build<br>what <em>brings</em><br>the business.</h2><p>Tell us a little about your business and the acquisition challenge you want solved. We'll discuss the right service scope and where to start.</p></div>
+        <form class="contact-form reveal" id="consultForm">
+          <h3>Request an acquisition conversation</h3><p>Start with a short introduction. Your email application will open with your enquiry ready to send.</p>
+          <div class="form-row"><div class="field"><label for="contactName">Your name *</label><input required name="name" id="contactName" autocomplete="name" placeholder="Full name"></div><div class="field"><label for="contactEmail">Email address *</label><input required type="email" name="email" id="contactEmail" autocomplete="email" placeholder="you@company.com"></div></div>
+          <div class="field"><label for="contactBusiness">Business / website</label><input name="business" id="contactBusiness" placeholder="Your business name or website"></div>
+          <div class="field"><label for="contactChallenge">What are you looking to improve? *</label><textarea name="challenge" id="contactChallenge" required placeholder="Tell us about your service business and your acquisition goals..."></textarea></div>
+          <button type="submit" class="btn btn-dark form-submit">Prepare my enquiry <span class="arrow">↗</span></button>
+          <p class="form-note">No information is sent automatically. Clicking the button opens your email app, where you can review and send your message.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top"><a class="brand" href="#home"><span class="brand-symbol" aria-hidden="true">AA</span><span class="brand-name">ATTRACT<br>ACQUISITION<small>Customer acquisition infrastructure</small></span></a><div class="footer-right"><a href="#infrastructure">Infrastructure</a><a href="#services">The service</a><a href="#delivery">Delivery</a><a href="#faq">FAQs</a><a href="mailto:alex@attractacq.com">Email our team ↗</a></div></div>
+      <div class="footer-bottom"><span>© <span id="copyrightYear">2026</span> Attract Acquisition. All rights reserved.</span><span>Strategy-led. Human-managed. Infrastructure-powered.</span></div>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const stages = [
+        {title:"We learn your business before we go after its market.",description:"We assemble your business, customer, competitor, brand and proof intelligence — then research specific market segments where a more relevant message can create an advantage.",tags:["Business intelligence","Ideal customer profiles","Competitor research","Micro-niche opportunities"]},
+        {title:"We make the offer worth paying attention to.",description:"We refine your core proposition and shape focused, audience-specific offers that make your service relevant to each opportunity, instead of relying on generic advertising.",tags:["Offer strategy","Core service offers","Niche-specific offers","Positioning & messaging"]},
+        {title:"We turn strategy into campaigns and creative.",description:"We coordinate the campaign plan, production briefs, organic and paid assets, content adaptations and proof-led creative — preparing everything for manager review and channel activation.",tags:["Campaign planning","Videos & visuals","Organic & paid creative","Proof content"]},
+        {title:"We put the right work in the right places.",description:"Our team coordinates organic content across connected social accounts, proof placements and paid advertising. Human media specialists manage campaigns in Meta and Google ad platforms.",tags:["Instagram & Facebook","Human-managed Meta Ads","Google Ads oversight","Proof distribution"]},
+        {title:"We connect attention to a clear next step.",description:"Where the campaign requires it, we create relevant landing and offer pages, lead magnets and sales-agent experiences that turn interest into a guided enquiry journey.",tags:["Landing & offer pages","Lead magnets","Sales agents","Enquiry pathways"]},
+        {title:"We review the evidence and refine the next move.",description:"We bring together channel performance, content activity, enquiries and available conversion signals to understand what to continue, change or stop — then feed that back into future work.",tags:["Channel reporting","Attribution signals","Campaign learning","Continuous optimisation"]}
+      ];
+      const tabs = [...document.querySelectorAll('.infra-tab')];
+      const stageTitle = document.getElementById('stageTitle');
+      const stageDescription = document.getElementById('stageDescription');
+      const stageCounter = document.getElementById('stageCounter');
+      const stageTags = document.getElementById('stageTags');
+      const panel = document.getElementById('stagePanel');
+      function selectStage(i, focus=false){
+        const stage = stages[i]; if(!stage)return;
+        tabs.forEach((tab,index)=>{const active=index===i;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
+        panel.setAttribute('aria-labelledby',`tab-${i}`);
+        stageCounter.textContent=`STAGE ${String(i+1).padStart(2,'0')} / 06`;
+        stageTitle.textContent=stage.title;
+        stageDescription.textContent=stage.description;
+        stageTags.replaceChildren(...stage.tags.map(t=>{const span=document.createElement('span');span.textContent=t;return span;}));
+        if(focus) tabs[i].focus();
+      }
+      tabs.forEach((tab,i)=>{
+        tab.addEventListener('click',()=>selectStage(i));
+        tab.addEventListener('keydown',event=>{
+          let next=i;
+          if(event.key==='ArrowRight'||event.key==='ArrowDown')next=(i+1)%tabs.length;
+          else if(event.key==='ArrowLeft'||event.key==='ArrowUp')next=(i-1+tabs.length)%tabs.length;
+          else if(event.key==='Home')next=0;
+          else if(event.key==='End')next=tabs.length-1;
+          else return;
+          event.preventDefault();selectStage(next,true);
+        });
+      });
+      const menuBtn=document.getElementById('menuBtn');
+      const navLinks=document.getElementById('navLinks');
+      menuBtn.addEventListener('click',()=>{const isOpen=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(isOpen));menuBtn.setAttribute('aria-label',isOpen?'Close navigation menu':'Open navigation menu');menuBtn.textContent=isOpen?'×':'☰';});
+      navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label','Open navigation menu');menuBtn.textContent='☰';}));
+      document.getElementById('copyrightYear').textContent=String(new Date().getFullYear());
+      const form=document.getElementById('consultForm');
+      form.addEventListener('submit',event=>{
+        event.preventDefault(); if(!form.reportValidity())return;
+        const data=new FormData(form);
+        const name=String(data.get('name')||'').trim(),email=String(data.get('email')||'').trim(),business=String(data.get('business')||'').trim(),challenge=String(data.get('challenge')||'').trim();
+        const subject=`Acquisition conversation — ${business||name}`;
+        const body=`Hello Attract Acquisition,\n\nI'd like to discuss your managed acquisition service.\n\nName: ${name}\nEmail: ${email}\nBusiness / website: ${business||'Not provided'}\n\nWhat we want to improve:\n${challenge}\n\nRegards,\n${name}`;
+        window.location.href=`mailto:alex@attractacq.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+      const reveals=document.querySelectorAll('.reveal');
+      if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.06,rootMargin:'0px 0px 30px 0px'});
+        reveals.forEach(el=>observer.observe(el));
+      } else reveals.forEach(el=>el.classList.add('visible'));
+    })();
+  </script>
+</body>
+</html>
