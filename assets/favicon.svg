@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Attract Acquisition">
+  <rect width="64" height="64" rx="14" fill="#101412"/>
+  <g transform="translate(32 32) skewX(-4)">
+    <rect x="-18" y="-18" width="36" height="36" rx="7" fill="#d8fa78"/>
+    <text x="0" y="7" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="900" letter-spacing="-2.5" fill="#101412">AA</text>
+  </g>
+</svg>
