@@ -9,6 +9,7 @@
   <meta property="og:description" content="A managed acquisition service with strategy, creative, campaigns, conversion and reporting — all connected and run by one team.">
   <meta property="og:type" content="website">
   <title>Attract Acquisition — Customer Acquisition, Handled.</title>
+  <script>if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion-on');</script>
   <style>
   :root{
     --ink:#101412;
@@ -82,7 +83,7 @@
   .operation-inner{border-radius:9px;background:#111813;overflow:hidden}
   .op-header{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px 20px;border-bottom:1px solid #344236}
   .op-overline{display:flex;align-items:center;gap:7px;font:600 10px var(--mono);color:#a4b3a2;letter-spacing:.1em}
-  .live-light{height:7px;width:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px #c2ed5a6b}
+  .live-light{height:7px;width:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px #c2ed5a6b;animation:livePulse 2.2s ease-in-out infinite}
   .op-manage{color:#d4e4d0;border:1px solid #4b594b;border-radius:3px;padding:7px 8px;font:9px var(--mono);letter-spacing:.035em}
   .op-intro{padding:29px 25px 23px}
   .op-intro h3{margin:9px 0 0;font-size:23px;line-height:1.25;letter-spacing:-.05em;font-weight:580}
@@ -246,9 +247,81 @@
   .footer-right a{color:#c6d0c6;font-size:12px}
   .footer-right a:hover{color:var(--accent)}
   .footer-bottom{padding-top:19px;display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;border-top:1px solid #354138;color:#849487;font:10px/1.5 var(--mono)}
-  .reveal{opacity:1;transform:none;transition:opacity .65s,transform .65s}
-  .reveal.visible{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  @keyframes livePulse{0%,100%{box-shadow:0 0 8px #c2ed5a55;transform:scale(1)}50%{box-shadow:0 0 16px #d8fa78aa,0 0 0 6px rgba(216,250,120,.14);transform:scale(1.15)}}
+  @keyframes heroRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes heroOpIn{from{opacity:0;transform:translateY(40px) rotate(1deg)}to{opacity:1;transform:translateY(0) rotate(1deg)}}
+  @keyframes heroBarIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes stageFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  html.motion-on .hero-in{opacity:0;animation:heroRise .95s cubic-bezier(.22,1,.36,1) forwards}
+  html.motion-on .hero-in-1{animation-delay:.08s}
+  html.motion-on .hero-in-2{animation-delay:.2s}
+  html.motion-on .hero-in-3{animation-delay:.34s}
+  html.motion-on .hero-in-4{animation-delay:.48s}
+  html.motion-on .hero-in-5{animation-delay:.62s}
+  html.motion-on .operation.hero-in{animation-name:heroOpIn;animation-delay:.28s;animation-duration:1.05s}
+  html.motion-on .hero-bar.hero-in{animation-name:heroBarIn;animation-delay:.55s;animation-duration:.8s}
+  html.motion-on .reveal{opacity:0;transform:translateY(40px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
+  html.motion-on .reveal.reveal-left{transform:translateX(-36px)}
+  html.motion-on .reveal.reveal-right{transform:translateX(36px)}
+  html.motion-on .reveal.reveal-scale{transform:translateY(28px) scale(.96)}
+  html.motion-on .reveal.visible{opacity:1;transform:none}
+  html.motion-on .reveal-stagger > .service-card,
+  html.motion-on .reveal-stagger > .way-card,
+  html.motion-on .reveal-stagger > .proof-step,
+  html.motion-on .reveal-stagger > .proof-small,
+  html.motion-on .reveal-stagger > .manager-row,
+  html.motion-on .reveal-stagger > .fit-line,
+  html.motion-on .reveal-stagger > details,
+  html.motion-on .reveal-stagger > .op-step{
+    opacity:0;transform:translateY(22px);
+    transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)
+  }
+  html.motion-on .reveal-stagger.visible > .service-card,
+  html.motion-on .reveal-stagger.visible > .way-card,
+  html.motion-on .reveal-stagger.visible > .proof-step,
+  html.motion-on .reveal-stagger.visible > .proof-small,
+  html.motion-on .reveal-stagger.visible > .manager-row,
+  html.motion-on .reveal-stagger.visible > .fit-line,
+  html.motion-on .reveal-stagger.visible > details,
+  html.motion-on .reveal-stagger.visible > .op-step{opacity:1;transform:none}
+  html.motion-on .reveal-stagger.visible > :nth-child(1){transition-delay:.04s}
+  html.motion-on .reveal-stagger.visible > :nth-child(2){transition-delay:.12s}
+  html.motion-on .reveal-stagger.visible > :nth-child(3){transition-delay:.2s}
+  html.motion-on .reveal-stagger.visible > :nth-child(4){transition-delay:.28s}
+  html.motion-on .reveal-stagger.visible > :nth-child(5){transition-delay:.36s}
+  html.motion-on .reveal-stagger.visible > :nth-child(6){transition-delay:.44s}
+  html.motion-on .reveal-stagger.visible > :nth-child(7){transition-delay:.52s}
+  html.motion-on .service-grid.reveal-stagger.visible > .service-card:nth-child(1),
+  html.motion-on .proof-side.reveal-stagger.visible > .proof-small:nth-child(1){transition-delay:.08s}
+  html.motion-on .service-grid.reveal-stagger.visible > .service-card:nth-child(2),
+  html.motion-on .proof-side.reveal-stagger.visible > .proof-small:nth-child(2){transition-delay:.18s}
+  html.motion-on .service-grid.reveal-stagger.visible > .service-card:nth-child(3){transition-delay:.28s}
+  html.motion-on .stage-animating #stageTitle,
+  html.motion-on .stage-animating #stageDescription,
+  html.motion-on .stage-animating #stageTags,
+  html.motion-on .stage-animating #stageCounter{animation:stageFade .45s cubic-bezier(.22,1,.36,1)}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    html.motion-on .reveal,
+    html.motion-on .reveal-stagger > .service-card,
+    html.motion-on .reveal-stagger > .way-card,
+    html.motion-on .reveal-stagger > .proof-step,
+    html.motion-on .reveal-stagger > .proof-small,
+    html.motion-on .reveal-stagger > .manager-row,
+    html.motion-on .reveal-stagger > .fit-line,
+    html.motion-on .reveal-stagger > details,
+    html.motion-on .reveal-stagger > .op-step{opacity:1;transform:none;transition:none}
+    html.motion-on .hero-in,
+    html.motion-on .operation.hero-in,
+    html.motion-on .hero-bar.hero-in{opacity:1;animation:none;transform:none}
+    html.motion-on .operation.hero-in{transform:rotate(1deg)}
+    .live-light{animation:none}
+    html.motion-on .stage-animating #stageTitle,
+    html.motion-on .stage-animating #stageDescription,
+    html.motion-on .stage-animating #stageTags,
+    html.motion-on .stage-animating #stageCounter{animation:none}
+    *,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  }
   @media (max-width:1180px){
    .container{width:min(calc(100% - 60px),var(--wrap))}
    .hero-content{gap:36px}
@@ -393,19 +466,19 @@
     <section class="hero" id="home">
       <div class="container hero-content">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="dot"></span> Customer acquisition, as a managed service</div>
-          <h1>Customer acquisition, <span class="serif">handled.</span></h1>
-          <p class="hero-desc">We build and operate the infrastructure that helps service businesses get seen, build trust and win more of the right customers. Strategy, offers, creative, campaigns and conversion — managed by one accountable team.</p>
-          <div class="hero-actions">
+          <div class="eyebrow hero-in hero-in-1"><span class="dot"></span> Customer acquisition, as a managed service</div>
+          <h1 class="hero-in hero-in-2">Customer acquisition, <span class="serif">handled.</span></h1>
+          <p class="hero-desc hero-in hero-in-3">We build and operate the infrastructure that helps service businesses get seen, build trust and win more of the right customers. Strategy, offers, creative, campaigns and conversion — managed by one accountable team.</p>
+          <div class="hero-actions hero-in hero-in-4">
             <a href="#contact" class="btn btn-accent">Discuss your acquisition strategy <span class="arrow">↗</span></a>
             <a href="#infrastructure" class="btn btn-outline-light">See what we manage <span class="arrow">↓</span></a>
           </div>
-          <div class="hero-footnote">
+          <div class="hero-footnote hero-in hero-in-5">
             <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 10 3.2 3.2L15.5 6" stroke="#d8fa78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="9" stroke="#6f8768"/></svg>
             Done for you. Human managed. Powered by our own delivery infrastructure.
           </div>
         </div>
-        <div class="operation" aria-label="Illustration of Attract Acquisition's managed service workflow">
+        <div class="operation hero-in" aria-label="Illustration of Attract Acquisition's managed service workflow">
           <div class="operation-inner">
             <div class="op-header">
               <div class="op-overline"><span class="live-light"></span> AA / SERVICE DELIVERY</div>
@@ -415,7 +488,7 @@
               <div class="op-label">Behind every client engagement</div>
               <h3>One connected acquisition operation.</h3>
             </div>
-            <div class="op-steps">
+            <div class="op-steps reveal-stagger" id="opSteps">
               <div class="op-step"><div class="op-num">01</div><div><div class="op-name">Find the right market</div><div class="op-detail">Business context · niche intelligence</div></div><div class="op-check">✓</div></div>
               <div class="op-step"><div class="op-num">02</div><div><div class="op-name">Engineer the right offer</div><div class="op-detail">Positioning · audience-specific value</div></div><div class="op-check">✓</div></div>
               <div class="op-step"><div class="op-num">03</div><div><div class="op-name">Build the campaign</div><div class="op-detail">Creative · pages · lead pathways</div></div><div class="op-check">✓</div></div>
@@ -426,7 +499,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-bar">
+      <div class="hero-bar hero-in">
         <div class="container hero-bar-inner">
           <span class="hero-bar-label">The connected service</span>
           <div class="hero-bar-items"><span>Strategy</span><span>Content</span><span>Paid media</span><span>Conversion</span><span>Proof</span><span>Measurement</span></div>
@@ -436,8 +509,8 @@
 
     <section class="statement" aria-labelledby="statement-title">
       <div class="container statement-wrap">
-        <div class="eyebrow"><span class="dot" style="background:#526f3c"></span> A different model</div>
-        <div>
+        <div class="eyebrow reveal reveal-left"><span class="dot" style="background:#526f3c"></span> A different model</div>
+        <div class="reveal">
           <h2 id="statement-title">You don't need another tool to operate. <span>You need an acquisition team with the infrastructure to execute.</span></h2>
           <div class="statement-under">
             <p>Most growth efforts fragment across agencies, freelancers, platforms and handoffs. We connect the work into one managed delivery service — from understanding your customers to creating the next campaign and learning from the results.</p>
@@ -455,7 +528,7 @@
           </div>
           <p>Explore the six connected functions your Attract Acquisition team coordinates, produces and manages on your behalf.</p>
         </div>
-        <div class="infra-ui reveal">
+        <div class="infra-ui reveal reveal-scale">
           <div class="infra-side">
             <div class="infra-sidehead">Acquisition delivery map</div>
             <div class="infra-tabs" role="tablist" aria-label="Service infrastructure stages">
@@ -486,7 +559,7 @@
         </div>
         <div class="service-group reveal">
           <div class="service-group-label"><b>01 / Think strategically</b>Find the right customer.<br>Make the right proposition.</div>
-          <div class="service-grid">
+          <div class="service-grid reveal-stagger" data-stagger-parent>
             <article class="service-card"><div class="service-icon" aria-hidden="true">◎</div><h3>Business & market intelligence</h3><p>Research your customers, competitors, market, positioning and brand so decisions start with context.</p></article>
             <article class="service-card"><div class="service-icon" aria-hidden="true">⌕</div><h3>Micro-niche opportunities</h3><p>Find focused audiences and underserved segments worth reaching with specific campaigns.</p></article>
             <article class="service-card"><div class="service-icon" aria-hidden="true">◇</div><h3>Offer architecture</h3><p>Sharpen your core service offer and craft campaign-specific offers built around audience needs.</p></article>
@@ -494,7 +567,7 @@
         </div>
         <div class="service-group reveal">
           <div class="service-group-label"><b>02 / Make and reach</b>Create the assets.<br>Put them to work.</div>
-          <div class="service-grid">
+          <div class="service-grid reveal-stagger" data-stagger-parent>
             <article class="service-card"><div class="service-icon" aria-hidden="true">▦</div><h3>Campaign planning & production</h3><p>Connect each audience, offer and message to an executable organic and paid campaign plan.</p></article>
             <article class="service-card"><div class="service-icon" aria-hidden="true">✳</div><h3>Content & creative production</h3><p>Produce images, reels, stories, carousels and advertising creative; adapt and repurpose for each channel.</p></article>
             <article class="service-card"><div class="service-icon" aria-hidden="true">↗</div><h3>Channel distribution & management</h3><p>Coordinate Facebook and Instagram content and human-managed Meta and Google advertising activity.</p></article>
@@ -502,7 +575,7 @@
         </div>
         <div class="service-group reveal">
           <div class="service-group-label"><b>03 / Convert and compound</b>Turn attention into action.<br>Learn what works.</div>
-          <div class="service-grid">
+          <div class="service-grid reveal-stagger" data-stagger-parent>
             <article class="service-card"><div class="service-icon" aria-hidden="true">▤</div><h3>Landing pages & conversion</h3><p>Build offer-focused landing experiences, lead magnets and relevant enquiry pathways where appropriate.</p></article>
             <article class="service-card"><div class="service-icon" aria-hidden="true">✦</div><h3>Proof & reputation</h3><p>Capture real customer evidence, transform it into credible assets and distribute it across suitable touchpoints.</p></article>
             <article class="service-card"><div class="service-icon" aria-hidden="true">⌁</div><h3>Tracking & improvement</h3><p>Review campaign, content and enquiry signals to inform the next opportunity, offer and creative direction.</p></article>
@@ -517,7 +590,7 @@
           <div><div class="eyebrow light-label"><span class="dot"></span> How the service works</div><h2 id="delivery-title">We build the foundation.<br><span class="serif" style="color:var(--accent)">Then we keep it moving.</span></h2></div>
           <p>Two complementary types of work, run by the same team and informed by the same commercial strategy.</p>
         </div>
-        <div class="two-way-grid reveal">
+        <div class="two-way-grid reveal reveal-stagger">
           <article class="way-card">
             <div class="way-head"><span class="way-num">01 / INITIAL BUILD</span><span class="way-pill">GO-TO-MARKET</span></div>
             <h3>Launch an acquisition campaign.</h3>
@@ -545,17 +618,17 @@
           <div><div class="eyebrow"><span class="dot" style="background:#526f3c"></span> The credibility advantage</div><h2 id="proof-title">Good work deserves<br><span class="serif">to be seen.</span></h2></div>
           <p>For a service business, the work itself is some of the most compelling marketing. We help turn genuine outcomes into visible, usable proof.</p>
         </div>
-        <div class="proof-feature reveal">
+        <div class="proof-feature reveal reveal-scale">
           <div class="proof-image">
             <div class="proof-top"><span>Proof-led customer acquisition</span><span>Built on real work ↗</span></div>
             <div class="proof-big">Real outcomes.<br>Stronger <em>credibility.</em><br>More reasons<br>to choose you.</div>
           </div>
-          <div class="proof-side">
+          <div class="proof-side reveal-stagger" data-stagger-parent>
             <div class="proof-small"><small>Capture / six possible methods</small><h3>Don't let valuable customer evidence disappear.</h3><p>Request, interview, field capture, integration, manual upload and outcome follow-up workflows can all feed the process.</p></div>
             <div class="proof-small"><small>Distribution / connected presence</small><h3>Put proof where buying decisions happen.</h3><p>Adapt verified evidence for relevant social, search, campaign and conversion touchpoints, subject to permissions.</p></div>
           </div>
         </div>
-        <div class="proof-steps reveal" aria-label="Proof-to-market process">
+        <div class="proof-steps reveal reveal-stagger" aria-label="Proof-to-market process">
           <div class="proof-step"><b>01</b><span>Customer outcome</span></div><div class="proof-step"><b>02</b><span>Capture real evidence</span></div><div class="proof-step"><b>03</b><span>Check permission and accuracy</span></div><div class="proof-step"><b>04</b><span>Produce and repurpose</span></div><div class="proof-step"><b>05</b><span>Distribute and learn</span></div>
         </div>
       </div>
@@ -563,14 +636,14 @@
 
     <section class="section management" id="management" aria-labelledby="management-title">
       <div class="container management-grid">
-        <div class="reveal">
+        <div class="reveal reveal-left">
           <div class="eyebrow"><span class="dot" style="background:#526f3c"></span> Behind the service</div>
           <h2 id="management-title">Our infrastructure.<br><span class="serif">Our responsibility.</span></h2>
           <p>AA Console is the private operational environment our account managers and specialists use to coordinate your delivery. It connects research, production, approvals, channel work and reporting.</p>
           <p><strong>You're engaging a service team, not purchasing access to software.</strong> Automation helps our people execute consistently; our people remain responsible for decisions, quality and delivery.</p>
           <div class="management-list"><span>A dedicated point of coordination</span><span>Human review before publishing and activation</span><span>Specialists managing paid campaigns</span><span>Transparent deliverables and performance discussions</span></div>
         </div>
-        <div class="management-stack reveal" aria-label="AA managed workflow overview">
+        <div class="management-stack reveal reveal-right reveal-stagger" aria-label="AA managed workflow overview">
           <div class="management-stack-top">AA CONSOLE / INTERNAL OPERATIONS · ILLUSTRATIVE</div>
           <div class="manager-row"><div class="manager-index">01</div><div class="manager-icon" aria-hidden="true">⌕</div><div class="manager-text"><b>Research and plan</b><small>Business intelligence, micro-niches, offers and campaign structure</small></div><div class="manager-status">PREPARE</div></div>
           <div class="manager-row"><div class="manager-index">02</div><div class="manager-icon" aria-hidden="true">▦</div><div class="manager-text"><b>Create in connected workflows</b><small>Content, proof, landing pages and lead capture assets</small></div><div class="manager-status">PRODUCE</div></div>
@@ -590,7 +663,7 @@
           <a href="#contact" class="text-link">Explore a fit for your business <span class="arrow">↗</span></a>
         </div>
         <div class="reveal">
-          <div class="fit-lines">
+          <div class="fit-lines reveal-stagger" data-stagger-parent>
             <div class="fit-line"><span>01</span><strong>Home improvement & installation</strong><span class="small-arrow">↗</span></div>
             <div class="fit-line"><span>02</span><strong>Residential wellness & lifestyle</strong><span class="small-arrow">↗</span></div>
             <div class="fit-line"><span>03</span><strong>Specialist local services</strong><span class="small-arrow">↗</span></div>
@@ -604,7 +677,7 @@
     <section class="faq" id="faq" aria-labelledby="faq-title">
       <div class="container faq-wrap">
         <div class="reveal"><div class="eyebrow"><span class="dot" style="background:#526f3c"></span> Frequently asked</div><h2 id="faq-title">The important<br><span class="serif">questions.</span></h2><p class="faq-intro">How the service operates, where our team is involved and what the engagement actually means.</p></div>
-        <div class="faq-list reveal">
+        <div class="faq-list reveal reveal-stagger">
           <details open><summary>Is this a software subscription or a managed service?</summary><p>It is a managed customer acquisition service. Your agreement is with Attract Acquisition for defined outcomes and delivery activities. AA Console is the private infrastructure our team uses to do the work; it is not a self-service product you need to learn or operate.</p></details>
           <details><summary>Who actually creates, approves and runs the campaigns?</summary><p>Our internal workflows help prepare research, content, offers, pages and campaign assets. Account managers review work at key approval gates. Paid ads are configured, launched and managed by human advertising specialists in the relevant ad platforms, rather than left to an unattended publishing process.</p></details>
           <details><summary>Do you manage both ongoing content and specific campaigns?</summary><p>Yes. The operating model is designed to support recurring organic content and proof distribution alongside focused campaigns for particular audiences and offers. The exact mix and cadence depend on your agreed engagement.</p></details>
@@ -617,8 +690,8 @@
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="container contact-grid">
-        <div class="reveal"><div class="eyebrow"><span class="dot" style="background:#405b24"></span> Start the conversation</div><h2 id="contact-title">Let's build<br>what <em>brings</em><br>the business.</h2><p>Tell us a little about your business and the acquisition challenge you want solved. We'll discuss the right service scope and where to start.</p></div>
-        <form class="contact-form reveal" id="consultForm">
+        <div class="reveal reveal-left"><div class="eyebrow"><span class="dot" style="background:#405b24"></span> Start the conversation</div><h2 id="contact-title">Let's build<br>what <em>brings</em><br>the business.</h2><p>Tell us a little about your business and the acquisition challenge you want solved. We'll discuss the right service scope and where to start.</p></div>
+        <form class="contact-form reveal reveal-right reveal-scale" id="consultForm">
           <h3>Request an acquisition conversation</h3><p>Start with a short introduction. Your email application will open with your enquiry ready to send.</p>
           <div class="form-row"><div class="field"><label for="contactName">Your name *</label><input required name="name" id="contactName" autocomplete="name" placeholder="Full name"></div><div class="field"><label for="contactEmail">Email address *</label><input required type="email" name="email" id="contactEmail" autocomplete="email" placeholder="you@company.com"></div></div>
           <div class="field"><label for="contactBusiness">Business / website</label><input name="business" id="contactBusiness" placeholder="Your business name or website"></div>
@@ -656,10 +729,13 @@
         const stage = stages[i]; if(!stage)return;
         tabs.forEach((tab,index)=>{const active=index===i;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
         panel.setAttribute('aria-labelledby',`tab-${i}`);
+        panel.classList.remove('stage-animating');
+        void panel.offsetWidth;
         stageCounter.textContent=`STAGE ${String(i+1).padStart(2,'0')} / 06`;
         stageTitle.textContent=stage.title;
         stageDescription.textContent=stage.description;
         stageTags.replaceChildren(...stage.tags.map(t=>{const span=document.createElement('span');span.textContent=t;return span;}));
+        panel.classList.add('stage-animating');
         if(focus) tabs[i].focus();
       }
       tabs.forEach((tab,i)=>{
@@ -688,11 +764,35 @@
         const body=`Hello Attract Acquisition,\n\nI'd like to discuss your managed acquisition service.\n\nName: ${name}\nEmail: ${email}\nBusiness / website: ${business||'Not provided'}\n\nWhat we want to improve:\n${challenge}\n\nRegards,\n${name}`;
         window.location.href=`mailto:alex@attractacq.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
+      const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const activateReveal=el=>{
+        el.classList.add('visible');
+        el.querySelectorAll('[data-stagger-parent]').forEach(group=>group.classList.add('visible'));
+      };
       const reveals=document.querySelectorAll('.reveal');
-      if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-        const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.06,rootMargin:'0px 0px 30px 0px'});
+      if('IntersectionObserver' in window && !reduceMotion){
+        const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+          if(!entry.isIntersecting) return;
+          activateReveal(entry.target);
+          observer.unobserve(entry.target);
+        }),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
         reveals.forEach(el=>observer.observe(el));
-      } else reveals.forEach(el=>el.classList.add('visible'));
+        document.querySelectorAll('.hero-in').forEach(el=>{
+          el.addEventListener('animationend',()=>{
+            el.style.opacity='1';
+            el.classList.remove('hero-in','hero-in-1','hero-in-2','hero-in-3','hero-in-4','hero-in-5');
+            el.style.removeProperty('animation');
+          },{once:true});
+        });
+        const opSteps=document.getElementById('opSteps');
+        if(opSteps) window.setTimeout(()=>opSteps.classList.add('visible'),720);
+      } else {
+        document.documentElement.classList.remove('motion-on');
+        reveals.forEach(activateReveal);
+        document.querySelectorAll('.hero-in').forEach(el=>el.classList.remove('hero-in','hero-in-1','hero-in-2','hero-in-3','hero-in-4','hero-in-5'));
+        const opSteps=document.getElementById('opSteps');
+        if(opSteps) opSteps.classList.add('visible');
+      }
     })();
   </script>
 </body>
